@@ -1,16 +1,26 @@
-<div class="rickAndMorty-list-container">
+<div class="container py-4">
+  <div class="row justify-content-center">
     @if (detailResponse) {
-    <div class="card">
-        <img [src]="detailResponse.image" alt="Imagen del personaje">
-        <h3>{{ detailResponse.name }}</h3>
-        <h4>Ubicaciones:</h4>
-        @for (loc of detailResponse.location; track loc) {
-        <p>{{ loc }}</p>
-        }
-        <h4>Episodios:</h4>
-        @for (ep of detailResponse.episode; track ep) {
-        <p>{{ ep }}</p>
-        }
-    </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card card-center">
+
+          <img [src]="detailResponse.image" class="card-img-top" alt="Imagen del personaje">
+
+          <div class="card-body text-center">
+            <h3>{{ detailResponse.name }}</h3>
+
+            <h4>Ubicación:</h4>
+            <p>{{ detailResponse.location.name }}</p>
+
+            <h4>Episodios:</h4>
+            @for (ep of detailResponse.episode; track ep) {
+              <p>Episodio: {{ ep.split('/').pop() }}</p>
+            }
+
+          </div>
+
+        </div>
+      </div>
     }
+  </div>
 </div>

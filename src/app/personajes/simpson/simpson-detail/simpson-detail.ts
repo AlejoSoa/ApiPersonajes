@@ -22,11 +22,11 @@ export class SimpsonDetail implements OnInit {
     this._activedRoute.params.subscribe((params) => {
       console.log(params['id']);
       this._apiService.getRecipeById(params['id']).subscribe((detailResponse) => {
-      console.log(detailResponse)
-      this.detailResponse = detailResponse
-      this._cdr.markForCheck()
+        console.log(detailResponse);
+        this.detailResponse = detailResponse;
+        this._cdr.markForCheck();
       });
-      
     });
   }
+ 
 }

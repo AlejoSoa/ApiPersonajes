@@ -1,23 +1,19 @@
-<div class="dragonball-list-container">
-  @for (item of items; track item.id) {
-    <div class="card" (click)="navigateToDetail(item.id)">
-
-      <img [src]="item.image" alt="Imagen del personaje">
-
-      <h3>{{ item.name }}</h3>
-
-      <div class="cook">
-        <p><strong>Ki:</strong> {{ item.ki }}</p>
-        <p><strong>Max Ki:</strong> {{ item.maxKi }}</p>
+<div class="container">
+  <div class="row justify-content-center g-4">
+    @for (item of items; track item.id) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card w-100" (click)="navigateToDetail(item.id)">
+          <img [src]="item.image" class="card-img-top" alt="Imagen del personaje">
+          <div class="card-body text-center">
+            <h3 class="card-title">{{ item.name }}</h3>
+            <p><strong>Ki:</strong> {{ item.ki }}</p>
+            <p><strong>Max Ki:</strong> {{ item.maxKi }}</p>
+            <p><strong>Raza:</strong> {{ item.race }}</p>
+            <p><strong>Género:</strong> {{ item.gender }}</p>
+            <p><strong>Afiliación:</strong> {{ item.affiliation }}</p>
+          </div>
+        </div>
       </div>
-
-      <div class="cook">
-        <p><strong>Raza:</strong> {{ item.race }}</p>
-        <p><strong>Género:</strong> {{ item.gender }}</p>
-      </div>
-
-      <p><strong>Afiliación:</strong> {{ item.affiliation }}</p>
-
-    </div>
-  }
+    }
+  </div>
 </div>

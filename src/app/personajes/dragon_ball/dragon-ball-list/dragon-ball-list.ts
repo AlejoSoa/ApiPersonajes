@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ItemsSimple } from '@app/models/dragon_ball/ListModel';
 import { ApiDragonBall } from '@app/servicios/api-dragon-ball';
 
 @Component({
   selector: 'app-dragon-ball-list',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './dragon-ball-list.html',
   styleUrl: './dragon-ball-list.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,6 +22,6 @@ export class DragonBallList implements OnInit {
     });
   }
   navigateToDetail(id: number) {
-    this._router.navigate([`/items/${id}`]);
+    this._router.navigate([`/dragonball/${id}`]);
   }
 }

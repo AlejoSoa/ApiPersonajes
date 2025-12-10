@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { ResultsSimple } from '@app/models/rick_and_morty/ListModel';
 import { ApiRickAndMorty } from '@app/servicios/api-rick-and-morty';
 
 @Component({
   selector: 'app-rick-and-morty-list',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './rick-and-morty-list.html',
   styleUrl: './rick-and-morty-list.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,6 +22,6 @@ export class RickAndMortyList implements OnInit {
     });
   }
   navigateToDetail(id: number) {
-    this._router.navigate([`/results/${id}`]);
+    this._router.navigate([`/rickandmorty/${id}`]);
   }
 }

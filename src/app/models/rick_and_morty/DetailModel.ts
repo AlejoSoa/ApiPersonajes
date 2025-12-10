@@ -1,7 +1,15 @@
-export interface DetailResponse{
-    id:number;
+export interface DetailResponse {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  gender: string;
+  image: string;
+
+  location: {
     name: string;
-    location: string[];
-    episode: string[];
-    image: string;
+    url: string;
+  };
+
+  episode: string[];
 }

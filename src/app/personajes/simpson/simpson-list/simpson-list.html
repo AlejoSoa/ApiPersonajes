@@ -1,15 +1,20 @@
-<div class="recipe-list-container">
+<div class="container">
+  <div class="row justify-content-center g-4">
     @for (item of results; track item.id) {
-    <div class="card" (click)="navigateToDetail(item.id)">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card w-100" (click)="navigateToDetail(item.id)">
+          <img [src]="item.portrait_path" class="card-img-top" alt="personaje">
+          <div class="card-body text-center">
 
-        <img [src]="item.portrait_path" alt="Retrato del personaje">
+            <h3 class="card-title">{{ item.name }}</h3>
 
-        <h3>{{ item.name }}</h3>
+            <p><strong>Edad:</strong> {{ item.age }}</p>
+            <p><strong>Nacimiento:</strong> {{ item.birthdate }}</p>
+            <p><strong>Estado:</strong> {{ item.status }}</p>
 
-        <p><strong>Edad:</strong> {{ item.age }}</p>
-        <p><strong>Nacimiento:</strong> {{ item.birthdate }}</p>
-        <p><strong>Estado:</strong> {{ item.status }}</p>
-
-    </div>
+          </div>
+        </div>
+      </div>
     }
+  </div>
 </div>

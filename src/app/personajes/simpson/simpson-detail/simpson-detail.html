@@ -1,18 +1,24 @@
-<div class="recipe-list-container">
+<div class="container py-4">
+  <div class="row justify-content-center">
     @if (detailResponse) {
-    <div class="card">
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card card-center">
+          <img [src]="detailResponse.portrait_path" class="card-img-top" alt=" Personaje">
+          <div class="card-body">
+            <h3>{{ detailResponse.name }}</h3>
 
-        <img [src]="detailResponse.portrait_path" alt="Retrato del personaje">
+            <h4>Ocupación:</h4>
+            @for (job of detailResponse.occupation; track job) {
+              <p>{{ job }}</p>
+            }
 
-        <h3>{{ detailResponse.name }}</h3>
-        <h4>Ocupación(es):</h4>
-        @for (job of detailResponse.occupation; track job) {
-        <p>{{ job }}</p>
-        }
-        <h4>Frases icónicas:</h4>
-        @for (phrase of detailResponse.phrases; track phrase) {
-        <p>"{{ phrase }}"</p>
-        }
-    </div>
+            <h4>Frases icónicas:</h4>
+            @for (phrase of detailResponse.phrases; track phrase) {
+              <p>"{{ phrase }}"</p>
+            }
+          </div>
+        </div>
+      </div>
     }
+  </div>
 </div>
