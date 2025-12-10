@@ -1,0 +1,18 @@
+<div class="recipe-list-container">
+    @if (detailResponse) {
+    <div class="card">
+
+        <img [src]="detailResponse.portrait_path" alt="Retrato del personaje">
+
+        <h3>{{ detailResponse.name }}</h3>
+        <h4>Ocupación(es):</h4>
+        @for (job of detailResponse.occupation; track job) {
+        <p>{{ job }}</p>
+        }
+        <h4>Frases icónicas:</h4>
+        @for (phrase of detailResponse.phrases; track phrase) {
+        <p>"{{ phrase }}"</p>
+        }
+    </div>
+    }
+</div>

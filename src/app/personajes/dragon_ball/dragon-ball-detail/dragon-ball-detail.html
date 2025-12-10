@@ -1,0 +1,15 @@
+<div class="dragonball-list-container">
+  @if (detailResponse) {
+    <div class="card">
+      <img [src]="detailResponse.image" alt="Imagen del personaje">
+
+      <h3>{{ detailResponse.name }}</h3>
+
+      <div class="cook">
+        @for (desc of detailResponse.description; track desc) {
+          <p>{{ desc }}</p>
+        }
+      </div>
+    </div>
+  }
+</div>

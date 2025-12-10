@@ -1,0 +1,15 @@
+<div class="recipe-list-container">
+    @for (item of results; track item.id) {
+    <div class="card" (click)="navigateToDetail(item.id)">
+
+        <img [src]="item.portrait_path" alt="Retrato del personaje">
+
+        <h3>{{ item.name }}</h3>
+
+        <p><strong>Edad:</strong> {{ item.age }}</p>
+        <p><strong>Nacimiento:</strong> {{ item.birthdate }}</p>
+        <p><strong>Estado:</strong> {{ item.status }}</p>
+
+    </div>
+    }
+</div>

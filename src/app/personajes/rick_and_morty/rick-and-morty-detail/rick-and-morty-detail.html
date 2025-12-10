@@ -1,0 +1,16 @@
+<div class="rickAndMorty-list-container">
+    @if (detailResponse) {
+    <div class="card">
+        <img [src]="detailResponse.image" alt="Imagen del personaje">
+        <h3>{{ detailResponse.name }}</h3>
+        <h4>Ubicaciones:</h4>
+        @for (loc of detailResponse.location; track loc) {
+        <p>{{ loc }}</p>
+        }
+        <h4>Episodios:</h4>
+        @for (ep of detailResponse.episode; track ep) {
+        <p>{{ ep }}</p>
+        }
+    </div>
+    }
+</div>
