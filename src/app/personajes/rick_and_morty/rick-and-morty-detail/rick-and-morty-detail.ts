@@ -1,17 +1,18 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { DetailResponse } from '@app/models/rick_and_morty/DetailModel';
 import { ApiRickAndMorty } from '@app/servicios/api-rick-and-morty';
 
 @Component({
   selector: 'app-rick-and-morty-detail',
-  imports: [RouterModule],
+  imports: [],
   templateUrl: './rick-and-morty-detail.html',
   styleUrl: './rick-and-morty-detail.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RickAndMortyDetail implements OnInit {
   detailResponse!: DetailResponse;
+
   constructor(
     private _apiService: ApiRickAndMorty,
     private _activedRoute: ActivatedRoute,

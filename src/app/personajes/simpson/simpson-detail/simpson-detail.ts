@@ -12,6 +12,7 @@ import { ApiSimpson } from '@app/servicios/api-simpson';
 })
 export class SimpsonDetail implements OnInit {
   detailResponse!: DetailResponse;
+
   constructor(
     private _apiService: ApiSimpson,
     private _activedRoute: ActivatedRoute,
@@ -28,5 +29,4 @@ export class SimpsonDetail implements OnInit {
       });
     });
   }
- 
 }

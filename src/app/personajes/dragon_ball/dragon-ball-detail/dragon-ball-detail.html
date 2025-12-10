@@ -1,17 +1,21 @@
 <div class="container py-4">
   <div class="row justify-content-center">
     @if (detailResponse) {
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card card-center">
-          <img [src]="detailResponse.image" class="card-img-top" alt="Imagen del personaje">
-          <div class="card-body">
-            <h3>{{ detailResponse.name }}</h3>
-            @for (desc of detailResponse.description; track desc) {
-              <p>{{ desc }}</p>
-            }
-          </div>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-center">
+
+        <img [src]="detailResponse.image" class="card-img-top card-img-fixed" alt="Personaje" >
+
+        <div class="card-body text-center">
+
+          <h3>{{ detailResponse.name }}</h3>
+
+          <h4>Descripcion:</h4>
+          <p>{{detailResponse.description }}</p>
+
         </div>
       </div>
+    </div>
     }
   </div>
 </div>

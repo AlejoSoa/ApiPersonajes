@@ -1,26 +1,28 @@
 <div class="container py-4">
   <div class="row justify-content-center">
     @if (detailResponse) {
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card card-center">
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-center">
 
-          <img [src]="detailResponse.image" class="card-img-top" alt="Imagen del personaje">
+        <img [src]="detailResponse.image" class="card-img-top" alt="Personaje">
 
-          <div class="card-body text-center">
-            <h3>{{ detailResponse.name }}</h3>
+        <div class="card-body text-center">
 
-            <h4>Ubicación:</h4>
-            <p>{{ detailResponse.location.name }}</p>
+          <h3>{{ detailResponse.name }}</h3>
 
-            <h4>Episodios:</h4>
+          <h4>Ubicacion:</h4>
+          <p>{{ detailResponse.location.name }}</p>
+
+          <h4>Episodios:</h4>
+          <ul class="text-start text-center">
             @for (ep of detailResponse.episode; track ep) {
-              <p>Episodio: {{ ep.split('/').pop() }}</p>
+            <li>{{ ep }}</li>
             }
-
-          </div>
+          </ul>
 
         </div>
       </div>
+    </div>
     }
   </div>
 </div>

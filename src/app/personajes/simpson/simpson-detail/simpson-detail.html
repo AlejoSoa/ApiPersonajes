@@ -1,24 +1,29 @@
 <div class="container py-4">
   <div class="row justify-content-center">
     @if (detailResponse) {
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card card-center">
-          <img [src]="detailResponse.portrait_path" class="card-img-top" alt=" Personaje">
-          <div class="card-body">
-            <h3>{{ detailResponse.name }}</h3>
+    <div class="col-12 col-md-6 col-lg-4">
+      <div class="card card-center">
 
-            <h4>Ocupación:</h4>
-            @for (job of detailResponse.occupation; track job) {
-              <p>{{ job }}</p>
-            }
+        <img src="https://cdn.thesimpsonsapi.com/500{{detailResponse.portrait_path}}" class="card-img-top"
+          alt=" Personaje">
 
-            <h4>Frases icónicas:</h4>
+        <div class="card-body text-center">
+
+          <h3>{{ detailResponse.name }}</h3>
+
+          <h4>Ocupacion:</h4>
+          <p>{{ detailResponse.occupation}}</p>
+
+          <h4>Frases iconicas:</h4>
+          <ul class="text-start list-unstyled text-center">
             @for (phrase of detailResponse.phrases; track phrase) {
-              <p>"{{ phrase }}"</p>
+            <li>"{{ phrase }}"</li>
             }
-          </div>
+          </ul>
+
         </div>
       </div>
+    </div>
     }
   </div>
 </div>

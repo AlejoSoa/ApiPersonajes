@@ -12,6 +12,7 @@ import { ApiDragonBall } from '@app/servicios/api-dragon-ball';
 })
 export class DragonBallDetail implements OnInit{
 detailResponse!: DetailResponse;
+
   constructor(
     private _apiService: ApiDragonBall,
     private _activedRoute: ActivatedRoute,
@@ -24,9 +25,8 @@ detailResponse!: DetailResponse;
       this._apiService.getRecipeById(params['id']).subscribe((detailResponse) => {
       console.log(detailResponse)
       this.detailResponse = detailResponse
-      this._cdr.markForCheck()
-      });
-      
+      this._cdr.markForCheck();
+      });   
     });
   }
 }

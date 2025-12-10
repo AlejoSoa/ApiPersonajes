@@ -1,7 +1,5 @@
 export interface ItemsResponse {
-    
     items: ItemsSimple[];
-
 }
 
 export interface ItemsSimple {

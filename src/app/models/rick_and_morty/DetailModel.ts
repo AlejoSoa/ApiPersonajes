@@ -8,7 +8,6 @@ export interface DetailResponse {
 
   location: {
     name: string;
-    url: string;
   };
 
   episode: string[];
